@@ -43,7 +43,7 @@ class raid(commands.Cog):
             def check(m):
                 return m.channel == ctx.channel and not m.author.bot
             usercooldown = {}
-            endTime = datetime.datetime.now() + datetime.timedelta(minutes=1) #TESTING HAS THIS AS 1
+            endTime = datetime.datetime.now() + datetime.timedelta(minutes=10)
             damage = 0
             defence = 0
             await ctx.send("{} is now raiding {}!".format(attacking.mention,defending.mention))
