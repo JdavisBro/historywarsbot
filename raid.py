@@ -22,6 +22,8 @@ class raid(commands.Cog):
         global battleOn,civs
         if not battleOn:
             self.bot.get_channel(564225877785706516)
+            if ctx.channel.id != 564225877785706516:
+                return
             attacking = None
             for role in ctx.author.roles:
                 if role.name in civs.keys():
