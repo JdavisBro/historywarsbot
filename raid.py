@@ -11,7 +11,7 @@ def setup(bot):
     bot.add_cog(raid(bot))
 
 class raid(commands.Cog):
-    """Raid cog!"""
+    """Made by JdavisBro!"""
 
     def __init__(self, bot):
         self.bot = bot

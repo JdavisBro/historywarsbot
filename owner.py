@@ -5,7 +5,7 @@ def setup(bot):
     bot.add_cog(owner(bot))
 
 class owner(commands.Cog):
-    """owner cog!"""
+    """Various things for the owner!"""
 
     def __init__(self, bot):
         self.bot = bot
@@ -13,12 +13,14 @@ class owner(commands.Cog):
     @commands.command()
     @commands.is_owner()
     async def shutdown(self,ctx):
+        """Shuts the bot down"""
         await ctx.send("👋 Goodbye")
         await self.bot.close()
 
     @commands.command()
     @commands.is_owner()
     async def run(self,ctx,*,command):
+        """Runs a thing"""
         try:
             exec(command)
         except:
@@ -44,6 +46,7 @@ class owner(commands.Cog):
 
     @commands.command()
     async def info(self,ctx):
+        """Shows info about the bot"""
         colour = discord.Colour.from_rgb(random.randint(1,255),random.randint(1,255),random.randint(1,255))
         embed = discord.Embed(colour=colour,description="A bot made specifically for the HistoryWars discord!")
         embed.set_author(name="HistoryWarsBot", url="https://wwww.github.com/JdavisBro/historywarsbot", icon_url=self.bot.user.avatar_url)

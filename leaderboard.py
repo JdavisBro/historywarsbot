@@ -20,6 +20,7 @@ class leaderboard(commands.Cog):
     @commands.command()
     @commands.has_any_role(506413971423625226, 506899380289142785, 548668450763964428)
     async def leaderboardhelp(self,ctx):
+        """Lists info about leaderboard commands."""
         await ctx.send(
             "Available Leaderboard Commands:\n\t+addweapon [faction] [weapon]\n\t+removeweapon [faction] [weapon]\n\t+sendstats [channel]\n\t+add [item] [faction] [amount]\n\t+resetData (Resets All Data)")
 
@@ -27,6 +28,7 @@ class leaderboard(commands.Cog):
     @commands.command()
     @commands.has_any_role(506413971423625226, 506899380289142785, 548668450763964428)
     async def removeweapon(self,ctx, faction: str, *, weapon: str):
+        """Removes a weapon from a civ"""
         faction = faction.lower()
         if faction.lower() in factions:
             try:
@@ -50,6 +52,7 @@ class leaderboard(commands.Cog):
     @commands.command()
     @commands.has_any_role(506413971423625226, 506899380289142785, 548668450763964428)
     async def addweapon(self,ctx, faction: str, *, weapon: str):
+        """Adds a weapon to a civ"""
         faction = faction.lower()
         if faction in factions:
             try:
@@ -70,6 +73,7 @@ class leaderboard(commands.Cog):
     @commands.command()
     @commands.has_any_role(506413971423625226, 506899380289142785, 548668450763964428)
     async def sendstats(self,ctx, channel: discord.TextChannel=None):
+        """Send stats in current/specified channel"""
         if not channel:
             channel = ctx.channel
         # await channel.send("Faction\t\tCoins\t\tViking Loot\t\tPersian Loot\t\tRoman Loot\t\tEgyptian Root\t\tGreek Loot\t\tSamurai Loot\t\tWeapons")
@@ -101,6 +105,7 @@ class leaderboard(commands.Cog):
     @commands.command()
     @commands.has_any_role(506413971423625226, 506899380289142785, 548668450763964428)
     async def add(self,ctx, item: str, faction: str, amount: int):
+        """Adds loot/coins to the civ"""
         faction = faction.lower()
         item = item.lower()
         if faction in factions:
