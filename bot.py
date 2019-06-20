@@ -1,14 +1,13 @@
 import discord, asyncio, logging
 from discord.ext import commands
-import time, datetime
+import time
 import sys
 
-bot = commands.Bot(command_prefix='+')
+bot = commands.Bot(command_prefix='+',description="Made by MrEdinLaw (leaderboard) and JdavisBro (raid)")
 appinfo = None
 logging.basicConfig(format='[%(asctime)s] %(levelname)s: %(message)s', level=logging.INFO)
-battleOn = False
-civs = {"Greeks":datetime.datetime.now(),"Egyptions":datetime.datetime.now(),"Samurai":datetime.datetime.now(),"Romans":datetime.datetime.now(),"Vikings":datetime.datetime.now(),"Persians":datetime.datetime.now()}
-extensions = ['owner','raid']
+extensions = ['owner','raid','leaderboard']
+bot.startTime = time.time()
 
 if __name__ == '__main__':
     for extension in extensions:
